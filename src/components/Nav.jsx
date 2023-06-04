@@ -2,9 +2,9 @@ import { HomeIcon, WalletIcon, TrackIcon, CardIcon } from "./Icons"
 
 export default function Nav () {
     return (
-        <header className="p-2 bg-slate-900 sticky bottom-0">
+        <header className="py-3 bg-white border-t-2 sticky bottom-0">
             <ul className="flex gap-0 justify-around items-center  text-xs text-slate-500">
-                <li className="flex flex-col items-center text-green-400">
+                <li className="flex flex-col items-center bg-[#0A937E] p-2 text-white rounded-2xl">
                     <HomeIcon/>
                     <span>
                         Home
