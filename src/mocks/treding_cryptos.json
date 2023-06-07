@@ -1,0 +1,111 @@
+{
+    "coins": [
+        {
+            "item": {
+                "id": "pepe",
+                "coin_id": 29850,
+                "name": "Pepe",
+                "symbol": "PEPE",
+                "market_cap_rank": 91,
+                "thumb": "https://assets.coingecko.com/coins/images/29850/thumb/pepe-token.jpeg?1682922725",
+                "small": "https://assets.coingecko.com/coins/images/29850/small/pepe-token.jpeg?1682922725",
+                "large": "https://assets.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1682922725",
+                "slug": "pepe",
+                "price_btc": 4.04158048024659e-11,
+                "score": 0
+            }
+        },
+        {
+            "item": {
+                "id": "bitcoin",
+                "coin_id": 1,
+                "name": "Bitcoin",
+                "symbol": "BTC",
+                "market_cap_rank": 1,
+                "thumb": "https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579",
+                "small": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
+                "large": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+                "slug": "bitcoin",
+                "price_btc": 1,
+                "score": 1
+            }
+        },
+        {
+            "item": {
+                "id": "binancecoin",
+                "coin_id": 825,
+                "name": "BNB",
+                "symbol": "BNB",
+                "market_cap_rank": 4,
+                "thumb": "https://assets.coingecko.com/coins/images/825/thumb/bnb-icon2_2x.png?1644979850",
+                "small": "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png?1644979850",
+                "large": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850",
+                "slug": "bnb",
+                "price_btc": 0.009837007638199394,
+                "score": 2
+            }
+        },
+        {
+            "item": {
+                "id": "sui",
+                "coin_id": 26375,
+                "name": "Sui",
+                "symbol": "SUI",
+                "market_cap_rank": 98,
+                "thumb": "https://assets.coingecko.com/coins/images/26375/thumb/sui_asset.jpeg?1683114182",
+                "small": "https://assets.coingecko.com/coins/images/26375/small/sui_asset.jpeg?1683114182",
+                "large": "https://assets.coingecko.com/coins/images/26375/large/sui_asset.jpeg?1683114182",
+                "slug": "sui",
+                "price_btc": 0.000028638127685062155,
+                "score": 3
+            }
+        },
+        {
+            "item": {
+                "id": "edu-coin",
+                "coin_id": 29948,
+                "name": "Open Campus",
+                "symbol": "EDU",
+                "market_cap_rank": 186,
+                "thumb": "https://assets.coingecko.com/coins/images/29948/thumb/EDU_Logo.png?1682327357",
+                "small": "https://assets.coingecko.com/coins/images/29948/small/EDU_Logo.png?1682327357",
+                "large": "https://assets.coingecko.com/coins/images/29948/large/EDU_Logo.png?1682327357",
+                "slug": "open-campus",
+                "price_btc": 0.00003574087196684328,
+                "score": 4
+            }
+        },
+        {
+            "item": {
+                "id": "velodrome-finance",
+                "coin_id": 25783,
+                "name": "Velodrome Finance",
+                "symbol": "VELO",
+                "market_cap_rank": 575,
+                "thumb": "https://assets.coingecko.com/coins/images/25783/thumb/velo.png?1653817876",
+                "small": "https://assets.coingecko.com/coins/images/25783/small/velo.png?1653817876",
+                "large": "https://assets.coingecko.com/coins/images/25783/large/velo.png?1653817876",
+                "slug": "velodrome-finance",
+                "price_btc": 0.000004000724666765507,
+                "score": 5
+            }
+        },
+        {
+            "item": {
+                "id": "arbitrum",
+                "coin_id": 16547,
+                "name": "Arbitrum",
+                "symbol": "ARB",
+                "market_cap_rank": 38,
+                "thumb": "https://assets.coingecko.com/coins/images/16547/thumb/photo_2023-03-29_21.47.00.jpeg?1680097630",
+                "small": "https://assets.coingecko.com/coins/images/16547/small/photo_2023-03-29_21.47.00.jpeg?1680097630",
+                "large": "https://assets.coingecko.com/coins/images/16547/large/photo_2023-03-29_21.47.00.jpeg?1680097630",
+                "slug": "arbitrum",
+                "price_btc": 0.000042712358619541236,
+                "score": 6
+            }
+        }
+    ],
+    "nfts": [],
+    "exchanges": []
+}

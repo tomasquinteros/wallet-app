@@ -14,7 +14,6 @@ export default function Search () {
         setSearch(s)
     }
     const {response} = useFetch(`https://api.coingecko.com/api/v3/search?query=${search}`)
-
     return (
         <div className="p-8 flex flex-col gap-5">
             <h2 className="text-center font-semibold text-l text-gray-500">Buscador de crypto</h2>
