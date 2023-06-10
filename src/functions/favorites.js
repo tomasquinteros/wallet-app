@@ -1,3 +1,3 @@
-export const checkProductInFavorites = (crypto, favorites) => {
-    return favorites.some(crypt => crypt.id === crypto.id)
+export const checkProductInFavorites = (id, favorites) => {
+    return favorites.some(value => value.id === id)
 }
