@@ -1,7 +1,7 @@
 /* import useFetch from "../hooks/useFetch" */
 import { TredingComponent } from "./TredingComponent"
 /* import fetch_dls from "./fetch_dls" */
-import data from "../mocks/treding_cryptos.json"
+import data from "../../mocks/treding_cryptos.json"
 
 export default function TredingCrypto () {
     /* const { response } = useFetch("https://api.coingecko.com/api/v3/search/trending")

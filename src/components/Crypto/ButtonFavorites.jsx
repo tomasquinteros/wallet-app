@@ -1,4 +1,4 @@
-import { FavoritesIcon } from "./Icons"
+import { FavoritesIcon } from "../Icons"
 
 export default function ButtonsADDorRemoveFavorites ({crypto, itemInFav, addToFavorites, removeFromFavorites}) {
     return (

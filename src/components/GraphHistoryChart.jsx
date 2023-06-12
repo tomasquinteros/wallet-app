@@ -6,7 +6,6 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 export default function HistoryChart({id}) {
     const { response } = useFetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`)
-    
     if (!response) {
         return <div>Loading...</div>
     }

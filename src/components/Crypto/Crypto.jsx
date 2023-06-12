@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-import HistoryChart from "./GraphHistoryChart";
-import { Exchange, BackIcon } from "./Icons";
+import HistoryChart from "../GraphHistoryChart";
+import { Exchange, BackIcon } from "../Icons";
 import { useState } from "react";
-import { useFavorites } from "../hooks/useFavorites"
-import { checkProductInFavorites } from "../functions/favorites";
-import ButtonsADDorRemoveFavorites from "./Button";
-import data from "../mocks/treding_cryptos.json"
+import { useFavorites } from "../../hooks/useFavorites"
+import { checkProductInFavorites } from "../../functions/favorites";
+import ButtonsADDorRemoveFavorites from "./ButtonFavorites";
+import data from "../../mocks/treding_cryptos.json"
 import CryptoInfo  from "./CryptoInfo";
 
 

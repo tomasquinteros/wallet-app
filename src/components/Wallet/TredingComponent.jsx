@@ -1,5 +1,5 @@
-import { ArrowLeft } from "./Icons"
-import { colors } from "../assets/styleVariables"
+import { ArrowLeft } from "../Icons"
+import { colors } from "../../assets/styleVariables"
 import { Link } from "react-router-dom"
 export function TredingComponent ({coin}) {
     const { name, market_cap_rank, thumb, id } = coin.item

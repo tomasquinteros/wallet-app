@@ -1,5 +1,5 @@
-import { colors } from "../assets/styleVariables"
-import { NotificationsOff, TransactionIcon } from "./Icons"
+import { colors } from "../../assets/styleVariables"
+import { NotificationsOff, TransactionIcon } from "../Icons"
 
 export default function TopComponent () {
     return (

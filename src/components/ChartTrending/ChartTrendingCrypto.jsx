@@ -1,6 +1,6 @@
 import { useState } from "react"
-import HistoryChart from "../components/GraphHistoryChart"
-import { ChevronDownIcon, ChevronUpIcon, TrackIcon, TrendingDown } from "../components/Icons"
+import HistoryChart from "../GraphHistoryChart"
+import { ChevronDownIcon, ChevronUpIcon, TrackIcon, TrendingDown } from "../Icons"
 
 export default function ChartTredingCrypto({ crypto }) {
     const [togle, setTogle] = useState(false)
@@ -15,8 +15,8 @@ export default function ChartTredingCrypto({ crypto }) {
                     <h2>{crypto.name}</h2>
                 </div>
                 <div className="flex items-center gap-2">
-                <p className="text-[#0A937E] font-bold">Rank: {crypto.market_cap_rank}</p>
-                <button onClick={() => setTogle(!togle)}>{togle ? <ChevronUpIcon /> : <ChevronDownIcon />}</button>
+                    <p className="text-[#0A937E] font-bold">Rank: {crypto.market_cap_rank}</p>
+                    <button onClick={() => setTogle(!togle)}>{togle ? <ChevronUpIcon /> : <ChevronDownIcon />}</button>
                 </div>
             </div>
 

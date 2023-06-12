@@ -1,4 +1,4 @@
-import { ArrowUp } from "./Icons"
+import { ArrowUp } from "../Icons"
 export default function Balance () {
     return (
         <div className="text-center flex items-center flex-col">

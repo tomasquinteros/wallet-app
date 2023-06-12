@@ -1,7 +1,7 @@
-import TopComponent from '../components/TopComponent'
-import Balance from '../components/Balance'
-import GraphCard from '../components/Graph'
-import TredingCrypto from '../components/TredingCrypto'
+import TopComponent from '../components/Wallet/TopComponent'
+import Balance from '../components/Wallet/Balance'
+import GraphCard from '../components/Wallet/Graph'
+import TredingCrypto from '../components/Wallet/TredingCrypto'
 
 export default function Wallet () {
     return (

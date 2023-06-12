@@ -5,7 +5,7 @@ import Wallet from './pages/Wallet'
 import Card from './pages/Card'
 import Search from './pages/Search'
 import ChartTreding from './pages/ChartTreding'
-import Crypto from './components/Crypto'
+import Crypto from './components/Crypto/Crypto'
 import { FavoritesProvider } from './context/favorites'
 
 function App() {
