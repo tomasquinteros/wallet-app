@@ -2,7 +2,6 @@ import patternImage from "../../assets/card_img/images/pattern.png"
 import MASTER from "../../assets/MASTERCARD-IMAGE.png"
 import VISA from "../../assets/card_img/images/visa.png"
 export default function CardBack ({card}) {
-    /* console.log(card) */
     const {cardName, cardType, cardCVV} = card
     const cardTypeArray = cardType.split(" ")
     return (
@@ -11,10 +10,10 @@ export default function CardBack ({card}) {
             <div className="p-4 flex flex-col gap-6 justify-between">
                 <div className="flex items-center w-full">
                     <img src={patternImage} alt="" className="w-5/6 h-6" />
-                    <p className="bg-white text-[#0a937e] h-6">{cardCVV}</p>
+                    <p className="bg-white text-[#0a937e] h-6">{cardCVV.length < 1 ? '000' : cardCVV}</p>
                 </div>
                 <div className="flex justify-between">
-                    <h3>{cardName}</h3>
+                    <h3>{cardName.length < 1 ? "Your name" : cardName.toUpperCase()}</h3>
                     <img src={cardTypeArray[1] === "MASTERCARD" ? MASTER : VISA} alt="" className="w-12"/>
                 </div>
             </div>

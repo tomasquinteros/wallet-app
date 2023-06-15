@@ -1,112 +1,28 @@
-import { CardIcon, ArrowPath } from '../Icons'
+import { CardIcon, ArrowPath, XIcon } from '../Icons'
 import CardBack from './CardBack';
 import CardComponent from './CardComponent'
-import { useState } from 'react'
-
-const validKeyForPayment = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    'Backspace',
-];
+import { useRef, useState } from 'react'
+import {validKeyForPayment, validKeyForName} from '../../GlobalsVariables'
+import { useFormCard } from '../../hooks/useFormCard';
+import useCard from '../../hooks/useCard';
 
 export default function FormCard() {
     const [viewCardBack, setViewCardBack] = useState(false)
-    const [card, setCard] = useState({
-        cardNumber: '',
-        cardName: '',
-        cardMonth: '',
-        cardYear: '',
-        cardCVV: '',
-        cardType: ''
-    })
-    const [errors, setError] = useState({
-        errorNumber: true,
-        errorName: true,
-        errorMonth: true,
-        errorYear: true,
-        errorCVV: true,
-        errorTypeCard: true
-    })
+    const {handleInputNCard, handleName, handleMonth, handleYear, handleCVV, handleTypeCard, errors, card, setCard, resetForm} = useFormCard()
+    const {addCard} = useCard()
+    const form = useRef()
+    function validateCard() {
+        if (Object.entries(errors).every(value => value[1] === true)) {
+            addCard(card)
+        }
+        resetForm()
+    }
 
-    function formValidation(e) {
-        e.preventDefault()
-        console.log(e.target)
-        
-    }
-    function handleInputNCard(e) {
-        const inputValue = e.target.value.replace(/\s/g, '');
-        if (inputValue.length < 16) {
-            const errorNumber = false 
-            setError({...errors, errorNumber: errorNumber})
-        } else {
-            const errorNumber = true
-            setError({...errors, errorNumber: errorNumber})
-        }
-        if (inputValue !== '') {
-            const result = inputValue.match(/.{1,4}/g).join(' ');
-            e.target.value = result;
-        }
-    }
-    function handleName(e) {
-        if (e.target.value.lenght < 6) {
-            const errorName = false
-            setError({...errors, errorName: errorName})
-        } else {
-            setError({...errors, errorName: true})
-        }
-        setCard({ ...card, cardName: e.target.value })
-    }
-    function handleMonth(e) {
-        if (e.target.value > 12) {
-            const errorMonth = false
-            setError({...errors, errorMonth: errorMonth})
-        } else {
-            setError({...errors, errorMonth: true})
-        }
-        setCard({ ...card, cardMonth: e.target.value })
-    }
-    function handleYear(e) {
-        if (e.target.value <= 22) {
-            const errorYear = false
-            setError({...errors, errorYear: errorYear})
-        }  else {
-            setError({...errors, errorYear: true})
-        }
-        setCard({ ...card, cardYear: e.target.value })
-    }
-    function handleCVV(e) {
-        if (e.target.value.lenght <= 2) {
-            const errorCVV = false
-            setError({...errors, errorCVV: errorCVV})
-        } else {
-
-            setError({...errors, errorCVV: true})
-        }
-        setCard({ ...card, cardCVV: e.target.value })
-    }
-    function handleTypeCard(e) {
-        if (e.target.value.lenght === 0) {
-            const errorTypeCard = false
-            setError({...errors, errorTypeCard: errorTypeCard})
-        } else {
-
-            setError({...errors, errorTypeCard: true})
-        }
-        setCard({ ...card, cardType: e.target.value })
-    }
     return (
         <div className='m-4 p-4 flex flex-col gap-5'>
             <div className='flex justify-between'>
-                <h1 className='text-gray-800 text-2xl'>Add new card</h1>
-                <div className='bg-gray-300 p-2 text-[#0a937e] rounded-3xl' onClick={() => setViewCardBack(!viewCardBack)}>
+                {/* <h1 className='text-gray-800 text-2xl'>Add new card</h1> */}
+                <div className='bg-gray-300 p-2 text-[#0a937e] rounded-3xl ml-auto' onClick={() => setViewCardBack(!viewCardBack)}>
                     <ArrowPath />
                 </div>
             </div>
@@ -118,7 +34,7 @@ export default function FormCard() {
                     <CardBack card={card} />
                 </div>
             </div>
-            <form className='flex flex-col gap-4' onSubmit={(e) => formValidation(e)}>
+            <form className='flex flex-col gap-4' onSubmit={(e) => {e.preventDefault()}} ref={form} >
                 <ul className='flex flex-col gap-4 justify-start items-start text-gray-700 font-medium text-lg'>
                     <li className='w-full'>
                         <label className='text-sm font-semibold'>Card Number</label>
@@ -134,6 +50,7 @@ export default function FormCard() {
                                         e.preventDefault()
                                     }
                                 }}
+                                value={card.cardNumber}
                             />
                             <span className='text-[#0A937E]'><CardIcon /></span>
                         </div>
@@ -142,20 +59,46 @@ export default function FormCard() {
                         <div>
                             <label className='font-semibold text-sm' htmlFor=''>Expiry date</label>
                             <div className='flex w-full gap-2 items-center'>
-                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardMonth' id='cardMonth' placeholder='MM' onChange={(e) => handleMonth(e)} />
+                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardMonth' id='cardMonth' placeholder='MM' onChange={(e) => handleMonth(e)} value={card.cardMonth}
+                                    onKeyDown={(e) => {
+                                        if (!validKeyForPayment.includes(e.key)) {
+                                            e.preventDefault()
+                                        }
+                                    }}
+                                />
                                 <span className='text-2xl text-[#0a937e]'>/</span>
-                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} />
+                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
+                                    onKeyDown={(e) => {
+                                        if (!validKeyForPayment.includes(e.key)) {
+                                            e.preventDefault()
+                                        }
+                                    }}
+                                />
+                            
                             </div>
-                            {errors.errorMonth ? '' : <span>El mes seleccionado sobrepasa el limite</span>}
                         </div>
                         <div>
                             <label className='font-semibold text-sm' htmlFor=''>CVC/CVV</label>
-                            <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full we' type='text' maxLength={3} onChange={(e) => handleCVV(e)} />
+                            <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full we' type='text' maxLength={3} onChange={(e) => handleCVV(e)} value={card.cardCVV}
+                                onKeyDown={(e) => {
+                                    if (!validKeyForPayment.includes(e.key)) {
+                                        e.preventDefault()
+                                    }
+                                }}
+                            />
                         </div>
                     </li>
                     <li className='flex flex-col w-full'>
                         <label className='font-semibold text-sm' htmlFor=''>Cardholder name</label>
-                        <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200' type='text' placeholder={'Enter cardholder´s fullname'} onChange={(e) => handleName(e)} />
+                        <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200' type='text' placeholder={'Enter cardholder´s fullname'} onChange={(e) => handleName(e)} 
+                            onKeyDown={(e) => {
+                                if (!validKeyForName.includes(e.key)) {
+                                    e.preventDefault()
+                                }
+                            }
+                            }
+                            value={card.cardName}
+                        />
                     </li>
                     <li className='flex flex-col'>
                         <label className='font-semibold text-sm' htmlFor='select-input'>Select card</label>
@@ -171,7 +114,18 @@ export default function FormCard() {
                         </select>
                     </li>
                 </ul>
-                <button type='submit' className='bg-[#0a937e90] p-2 hover:bg-[#0a937e] text-white rounded-md'>ADD CARD</button>
+                <div className='flex flex-col'>
+                    {errors.errorNumber ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> The card number must have 16 digits.</span>}
+
+                    {errors.errorMonth ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> The expiration month must be less than or equal to 12</span>}
+
+                    {errors.errorYear ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> The expiration year must be greater than 23</span>}
+
+                    {errors.errorCVV ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> Your security code must be 3 digits</span>}
+
+                    {errors.errorName ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> The name on the card must be greater than 6</span>}
+                </div>
+                <button type='submit' className='bg-[#0a937e90] p-2 hover:bg-[#0a937e] text-white rounded-md' onClick={() => validateCard()} >ADD CARD</button>
             </form>
         </div>
     )
