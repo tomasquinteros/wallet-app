@@ -10,7 +10,6 @@ export const CardProvider = ({children}) => {
     const [cards, setCards] = useState(cardInitialState)
     const addCard = (card) => {
         const newCards = prevState => ([...prevState, {...card}])
-        
         setCards(newCards)
     }
     const removeCard = (card) => {

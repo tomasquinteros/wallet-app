@@ -8,12 +8,13 @@ export const FavoritesProvider = ({children}) => {
         window.localStorage.setItem('favorites', JSON.stringify(state))
     }
     const addToFavorites = (crypto) => {
+        console.log(crypto)
         const newFavorites = prevState => ([...prevState, {...crypto}])
         setFavorites(newFavorites)
     }
     const removeFromFavorites = (crypto) => {
         const newFavorites = favorites.filter(item => item.id !== crypto.id)
-        return setFavorites(newFavorites)
+        setFavorites(newFavorites)
     }
     updateLocalStorage(favorites)
     return (
