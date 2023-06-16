@@ -3,7 +3,6 @@ import VISA from "../../assets/card_img/images/visa.png"
 
 
 export default function CardComponent (card) {
-    console.log(card)
     const {cardNumber ,cardName, cardType, cardMonth, cardYear} = card.card
     const cardTypeArray = cardType.split(" ")
     return (

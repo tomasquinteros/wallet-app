@@ -5,7 +5,6 @@ import useCard from '../hooks/useCard'
 export default function Card () {
     let lastMov = ['', '', '']
     const {cards} = useCard()
-    console.log(cards)
     return (
         <div className='p-8 flex flex-col gap-4'>
             <div className='flex flex-col gap-4'>
