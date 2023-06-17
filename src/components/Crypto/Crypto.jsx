@@ -46,11 +46,11 @@ export default function Crypto() {
                         />
                     </div>
                 </div>
-                <div className="w-full">
+                <div className="min-w-full">
                     <span className="text-xs text-gray-500 text-right block">last 7 day</span>
                     <HistoryChart id={id} />
                 </div>
-                <div className="flex justify-between w-full">
+                <div className="flex justify-between">
                     {
                         market ? <Market market={market} /> : <></>
                     }
