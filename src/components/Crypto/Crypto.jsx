@@ -66,7 +66,7 @@ export default function Crypto() {
                         <input className="border-slate-500 border-2 rounded-lg p-2 w-full focus:border-[#0A937E] outline-none" type="number" name="dolares" id="dolares" value={market.length > 0 ? market[0].current_price * value : 0 * value} readOnly={true} />
                     </form>
                 </div>
-                <CryptoInfo>{crypto.info}</CryptoInfo>
+                <CryptoInfo>{response}</CryptoInfo>
             </div> : <div>Loading...</div>
     )
 }

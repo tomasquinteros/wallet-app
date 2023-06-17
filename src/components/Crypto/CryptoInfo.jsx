@@ -6,7 +6,9 @@ export default function CryptoInfo ({children}) {
             <details className="bg-gray-300 p-2 text-gray-800 w-full rounded-lg">
                 <summary className="bg-[#0A937E] p-2 -m-[0.5em] text-white">View cryptocurrency information</summary>
                 <div className="py-4">
-                    <p>{children === undefined ? 'Not found information ' : children}</p>
+                    {children ?
+                        <p>{ children.description ? children.description.en : "Loading..." }</p> : <p>Not found</p>
+                    }
                 </div>
             </details>
         </div>

@@ -9,7 +9,7 @@ export default function ChartTredingCrypto({ crypto }) {
     const market = FetchPricesID(crypto.id)
     console.log(market)
     return (
-        <li className="shadow-lg p-4 bg-gray-100 rounded-2xl flex flex-col gap-4 transition-all">
+        <li className="shadow-lg p-4 bg-gray-100 rounded-2xl flex flex-col gap-4 transition-all w-full">
             <div className="flex justify-between">
                 <div className="flex gap-2 items-center">
                     <img src={crypto.image.small} alt={crypto.name} />
@@ -23,7 +23,7 @@ export default function ChartTredingCrypto({ crypto }) {
 
             <div className={togle ? "block  transition-all" : "hidden transition-all"}>
                 <HistoryChart id={crypto.id} />
-                <div className="flex justify-between">
+                <div className="flex justify-between w-full flex-wrap">
                     {
                         market ? <Market market={market} /> : <></>
                     }
