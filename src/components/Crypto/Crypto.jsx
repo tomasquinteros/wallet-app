@@ -46,7 +46,7 @@ export default function Crypto() {
                         />
                     </div>
                 </div>
-                <div>
+                <div className="w-full">
                     <span className="text-xs text-gray-500 text-right block">last 7 day</span>
                     <HistoryChart id={id} />
                 </div>

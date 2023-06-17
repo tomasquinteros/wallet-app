@@ -2,7 +2,6 @@ import { ArrowLeft } from "../Icons"
 import { colors } from "../../assets/styleVariables"
 import { Link } from "react-router-dom"
 export function TredingComponent ({coin}) {
-    console.log(coin)
     const { name, thumb, id, market_cap_rank } = coin.item
     return (
         <Link to={`/search/${id}`}>
