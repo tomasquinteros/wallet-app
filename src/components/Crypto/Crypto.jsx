@@ -29,7 +29,7 @@ export default function Crypto() {
     }, [response])
     return (
         response  ?
-            <div className="p-8 flex flex-col gap-6">
+            <div className="p-8 flex flex-col gap-6 w-full">
                 <div className="flex justify-between">
                     <div className="flex gap-5 items-center mb-4">
                         <Link to="/search" className="hover:bg-gray-300 rounded-xl p-2">
@@ -50,7 +50,7 @@ export default function Crypto() {
                     <span className="text-xs text-gray-500 text-right block">last 7 day</span>
                     <HistoryChart id={id} />
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between w-full">
                     {
                         market ? <Market market={market} /> : <></>
                     }
