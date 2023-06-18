@@ -6,7 +6,7 @@ export default function Market({ market }) {
         <div>
             {
                 market.length > 0 ?
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-8 flex-col">
                         {
                             market[0].price_change_24h < 0 ? <p className="flex items-center text-red-600"><TrendingDown /> ${market[0].price_change_24h} </p> : <p className="flex items-center text-[#0A937E]"><TrackIcon /> ${market[0].price_change_24h}</p>
                         }
