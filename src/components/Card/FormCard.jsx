@@ -40,7 +40,7 @@ export default function FormCard() {
                         <label className='text-sm font-semibold'>Card Number</label>
                         <div className='flex items-center bg-gray-200 rounded-md justify-between p-2'>
                             <input 
-                                className='w-3/4 bg-gray-200 rounded-md outline-none boder-2  border-gray-200' 
+                                className='bg-gray-200 rounded-md outline-none border-2  border-gray-200 focus:border-b-[#0a937e] focus:rounded-none mr-auto' 
                                 maxLength={19} type='text'
                                 placeholder='---- ---- ---- ----' 
                                 onInput={(e) => handleInputNCard(e)} 
@@ -59,7 +59,7 @@ export default function FormCard() {
                         <div>
                             <label className='font-semibold text-sm' htmlFor=''>Expiry date</label>
                             <div className='flex w-full gap-2 items-center'>
-                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardMonth' id='cardMonth' placeholder='MM' onChange={(e) => handleMonth(e)} value={card.cardMonth}
+                                <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e]  w-full' type='text' maxLength='2' name='cardMonth' id='cardMonth' placeholder='MM' onChange={(e) => handleMonth(e)} value={card.cardMonth}
                                     onKeyDown={(e) => {
                                         if (!validKeyForPayment.includes(e.key)) {
                                             e.preventDefault()
@@ -68,7 +68,7 @@ export default function FormCard() {
                                     inputMode='tel'
                                 />
                                 <span className='text-2xl text-[#0a937e]'>/</span>
-                                <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
+                                <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e] w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
                                     onKeyDown={(e) => {
                                         if (!validKeyForPayment.includes(e.key)) {
                                             e.preventDefault()
@@ -81,7 +81,7 @@ export default function FormCard() {
                         </div>
                         <div>
                             <label className='font-semibold text-sm' htmlFor=''>CVC/CVV</label>
-                            <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full we' type='text' maxLength={3} onChange={(e) => handleCVV(e)} value={card.cardCVV}
+                            <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e]  w-full we' type='text' maxLength={3} onChange={(e) => handleCVV(e)} value={card.cardCVV}
                                 onKeyDown={(e) => {
                                     if (!validKeyForPayment.includes(e.key)) {
                                         e.preventDefault()
@@ -93,7 +93,7 @@ export default function FormCard() {
                     </li>
                     <li className='flex flex-col w-full'>
                         <label className='font-semibold text-sm' htmlFor=''>Cardholder name</label>
-                        <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200' type='text' placeholder={'Enter cardholder´s fullname'} onChange={(e) => handleName(e)} 
+                        <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e] ' type='text' placeholder={'Enter cardholder´s fullname'} onChange={(e) => handleName(e)} 
                             onKeyDown={(e) => {
                                 if (!validKeyForName.includes(e.key)) {
                                     e.preventDefault()
@@ -128,7 +128,7 @@ export default function FormCard() {
 
                     {errors.errorName ? '' : <span className='text-xs text-red-600 flex items-center gap-1'><XIcon/> The name on the card must be greater than 6</span>}
                 </div>
-                <button type='submit' className='bg-[#0a937e90] p-2 hover:bg-[#0a937e] text-white rounded-md' onClick={() => validateCard()} >ADD CARD</button>
+                <button type='submit' className='bg-[#0a937e] p-2 hover:bg-[#0a937e] text-white rounded-md' onClick={() => validateCard()} >ADD CARD</button>
             </form>
         </div>
     )

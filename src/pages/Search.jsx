@@ -19,8 +19,8 @@ export default function Search() {
             <h2 className="text-center font-semibold text-l text-gray-500">Buscador de crypto</h2>
             <div >
                 <form className="flex gap-2">
-                    <input ref={inputSearch} type="text" placeholder="bitcoin, ethereum..." className={`border-2 border-[${colors.color_primary}] focus:border-gray-700 rounded-md p-2 w-full outline-none`} />
-                    <button type="submit" className={`bg-gray-200 text-gray-500 p-2 rounded-xl hover:bg-[#0A937E] hover:text-white transition-all`} onClick={(e) => onSearch(e)}>
+                    <input ref={inputSearch} type="text" placeholder="bitcoin, ethereum..." className={`border-2 border-[${colors.color_primary}] focus:border-[#0a937e] rounded-md p-2 w-full outline-none `} />
+                    <button type="submit" className={`text-gray-200 p-2 rounded-xl bg-[#0A937E] hover:text-white transition-all`} onClick={(e) => onSearch(e)}>
                         <SearchIcon />
                     </button>
                 </form>
