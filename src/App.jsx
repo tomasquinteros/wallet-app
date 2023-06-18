@@ -14,7 +14,7 @@ function App() {
     return (
         <FavoritesProvider>
             <CardProvider>
-                <div className='min-h-screen flex justify-between flex-col'>
+                <div className='min-h-screen flex justify-between flex-col max-w-md m-auto'>
                     <BrowserRouter>
                         <div className='flex flex-col gap-8'>
                             <Routes>
