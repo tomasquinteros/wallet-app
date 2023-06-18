@@ -23,7 +23,7 @@ export default function ChartTredingCrypto({ crypto }) {
 
             <div className={togle ? "block  transition-all" : "hidden transition-all"}>
                 <HistoryChart id={crypto.id} />
-                <div className="flex justify-between w-full flex-wrap">
+                <div className="flex justify-between flex-wrap">
                     {
                         market ? <Market market={market} /> : <></>
                     }

@@ -50,7 +50,7 @@ export default function FormCard() {
                                         e.preventDefault()
                                     }
                                 }}
-                                value={card.cardNumber}
+                                value={card.cardNumber} inputMode='tel'
                             />
                             <span className='text-[#0A937E]'><CardIcon /></span>
                         </div>
@@ -65,6 +65,7 @@ export default function FormCard() {
                                             e.preventDefault()
                                         }
                                     }}
+                                    inputMode='tel'
                                 />
                                 <span className='text-2xl text-[#0a937e]'>/</span>
                                 <input className='bg-gray-200 p-2 rounded-md outline-none boder-2  border-gray-200 w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
@@ -73,6 +74,7 @@ export default function FormCard() {
                                             e.preventDefault()
                                         }
                                     }}
+                                    inputMode='tel'
                                 />
                             
                             </div>
@@ -85,6 +87,7 @@ export default function FormCard() {
                                         e.preventDefault()
                                     }
                                 }}
+                                inputMode='tel'
                             />
                         </div>
                     </li>

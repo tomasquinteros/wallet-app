@@ -22,7 +22,7 @@ export default function HistoryChart({id}) {
         datasets: [{ fill: true, label: "Bitcoin", data: coinChart.map(val => val.y), backgroundColor: "rgba(10, 147, 126, 0.4)", borderColor: "rgb(10, 147, 126)", borderWidth: 0.5, pointRadius: 0.5 }],
     };
     return (
-        <div>
+        <div className="w-full">
             <Line options={options} data={data} />
         </div>
     )
