@@ -19,11 +19,11 @@ export default function Crypto() {
     // Search
     const market = FetchPricesID(id)
     console.log(market)
-    const [value, setValue] = useState(1)
+    /* const [value, setValue] = useState(1)
     function onExchange(e) {
         const { value } = e.target
         return setValue(value)
-    }
+    } */
     useEffect(() => {
         
     }, [response])
@@ -50,12 +50,12 @@ export default function Crypto() {
                     <span className="text-xs text-gray-500 text-right block">last 7 day</span>
                     <HistoryChart id={id} />
                 </div>
-                <div className="flex justify-between">
+                {/* <div className="flex justify-between">
                     {
                         market ? <Market market={market} /> : <></>
                     }
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     <p className="text-gray-700 font-medium">Exchange {response.symbol} to dolar</p>
                     <form className="flex flex-col gap-2 items-center">
                         <div className="w-full">
@@ -65,7 +65,7 @@ export default function Crypto() {
                         <Exchange />
                         <input className="border-slate-500 border-2 rounded-lg p-2 w-full focus:border-[#0A937E] outline-none" type="number" name="dolares" id="dolares" value={market.length > 0 ? market[0].current_price * value : 0 * value} readOnly={true} />
                     </form>
-                </div>
+                </div> */}
                 <CryptoInfo>{response}</CryptoInfo>
             </div> : <div>Loading...</div>
     )

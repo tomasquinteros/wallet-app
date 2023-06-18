@@ -4,10 +4,8 @@ import { ChevronDownIcon, ChevronUpIcon} from "../Icons"
 import Market from "../Crypto/Market";
 import FetchPricesID from "../fetch_dls";
 export default function ChartTredingCrypto({ crypto }) {
-    console.log(crypto)
     const [togle, setTogle] = useState(false)
     const market = FetchPricesID(crypto.id)
-    console.log(market)
     return (
         <li className="shadow-lg p-4 bg-gray-100 rounded-2xl flex flex-col gap-4 transition-all w-full">
             <div className="flex justify-between">
