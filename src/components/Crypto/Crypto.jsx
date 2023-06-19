@@ -18,7 +18,6 @@ export default function Crypto() {
     const { response } = useFetch(`https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=false&market_data=false&community_data=false&sparkline=false`)
     // Search
     const market = FetchPricesID(id)
-    console.log(market)
     /* const [value, setValue] = useState(1)
     function onExchange(e) {
         const { value } = e.target

@@ -1,16 +1,21 @@
 /* import { useState } from "react" */
-export default function CryptoInfo ({children}) {
+export default function CryptoInfo({ children }) {
     console.log(children)
     return (
         <div>
-            <details className="bg-gray-300 p-2 text-gray-800 w-full rounded-lg">
-                <summary className="bg-[#0A937E] p-2 -m-[0.5em] text-white">View cryptocurrency information</summary>
-                <div className="py-4">
-                    {children ?
-                        <p>{ children.description ? children.description.en.split('.') : "Loading..." }</p> : <p>Not found</p>
-                    }
-                </div>
-            </details>
+            {
+                children ?
+                    <details className="bg-gray-300 p-2 text-gray-800 w-full rounded-lg">
+                        <summary className="bg-[#0A937E] p-2 -m-[0.5em] text-white">View cryptocurrency information</summary>
+                        <div className="py-4">
+                            {children.description ?
+                                <p className="[&>a]:text-blue-600 [&>a]:underline wrap w-full" dangerouslySetInnerHTML={{ __html: children.description.en }} />
+                                : <p>Not found</p>
+                            }
+                        </div>
+                    </details>
+                    : <></>
+            }
         </div>
     )
 }
