@@ -4,8 +4,11 @@ import { Line } from 'react-chartjs-2';
 import useFetch from '../hooks/useFetch';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, Legend);
 
-export default function HistoryChart({id}) {
+export default function HistoryChart({id, color}) {
     const { response } = useFetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`)
+    console.log(id)
+    console.log(color)
+    const colorBorder = color ? color : "rgba(10, 147, 126, 0.4)"
     if (!response) {
         return <div>Loading...</div>
     }
@@ -19,7 +22,7 @@ export default function HistoryChart({id}) {
     };
     const data = {
         labels: coinChart.map(value => moment(value.x).format("DD MMM")),
-        datasets: [{ fill: true, label: "Bitcoin", data: coinChart.map(val => val.y), backgroundColor: "rgba(10, 147, 126, 0.4)", borderColor: "rgb(10, 147, 126)", borderWidth: 0.5, pointRadius: 0.5 }],
+        datasets: [{ fill: true, label: id, data: coinChart.map(val => val.y), backgroundColor: 'rgba(10, 147, 126, 0.4)', borderColor: colorBorder, borderWidth: 1, pointRadius: 0.5 }],
     };
     return (
         <div className="w-full">

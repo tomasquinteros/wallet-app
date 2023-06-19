@@ -37,7 +37,7 @@ export default function FormCard() {
             <form className='flex flex-col gap-4' onSubmit={(e) => {e.preventDefault()}} ref={form} >
                 <ul className='flex flex-col gap-4 justify-start items-start text-gray-700 font-medium text-lg'>
                     <li className='w-full'>
-                        <label className='text-sm font-semibold'>Card Number</label>
+                        <label className='text-sm font-semibold' htmlFor='number-card'>Card Number</label>
                         <div className='flex items-center bg-gray-200 rounded-md justify-between p-2'>
                             <input 
                                 className='bg-gray-200 rounded-md outline-none border-2  border-gray-200 focus:border-b-[#0a937e] focus:rounded-none mr-auto' 
@@ -51,13 +51,14 @@ export default function FormCard() {
                                     }
                                 }}
                                 value={card.cardNumber} inputMode='tel'
+                                id='number-card'
                             />
                             <span className='text-[#0A937E]'><CardIcon /></span>
                         </div>
                     </li>
                     <li className='flex justify-between gap-4 w-full'>
                         <div>
-                            <label className='font-semibold text-sm' htmlFor=''>Expiry date</label>
+                            <label className='font-semibold text-sm' htmlFor='expiry-data'>Expiry date</label>
                             <div className='flex w-full gap-2 items-center'>
                                 <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e]  w-full' type='text' maxLength='2' name='cardMonth' id='cardMonth' placeholder='MM' onChange={(e) => handleMonth(e)} value={card.cardMonth}
                                     onKeyDown={(e) => {
@@ -68,7 +69,7 @@ export default function FormCard() {
                                     inputMode='tel'
                                 />
                                 <span className='text-2xl text-[#0a937e]'>/</span>
-                                <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e] w-full' type='text' maxLength='2' name='cardYear' id='cardYear' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
+                                <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e] w-full' type='text' maxLength='2' name='cardYear' id='expiry-data' placeholder='YY' onChange={(e) => handleYear(e)} value={card.cardYear}
                                     onKeyDown={(e) => {
                                         if (!validKeyForPayment.includes(e.key)) {
                                             e.preventDefault()
@@ -80,7 +81,7 @@ export default function FormCard() {
                             </div>
                         </div>
                         <div>
-                            <label className='font-semibold text-sm' htmlFor=''>CVC/CVV</label>
+                            <label className='font-semibold text-sm' htmlFor='card-cvv'>CVC/CVV</label>
                             <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e]  w-full we' type='text' maxLength={3} onChange={(e) => handleCVV(e)} value={card.cardCVV}
                                 onKeyDown={(e) => {
                                     if (!validKeyForPayment.includes(e.key)) {
@@ -88,11 +89,12 @@ export default function FormCard() {
                                     }
                                 }}
                                 inputMode='tel'
+                                id='card-cvv'
                             />
                         </div>
                     </li>
                     <li className='flex flex-col w-full'>
-                        <label className='font-semibold text-sm' htmlFor=''>Cardholder name</label>
+                        <label className='font-semibold text-sm' htmlFor='card-name'>Cardholder name</label>
                         <input className='bg-gray-200 p-2 rounded-md  focus:outline-b-2 focus:outline-[#0a937e] ' type='text' placeholder={'Enter cardholder´s fullname'} onChange={(e) => handleName(e)} 
                             onKeyDown={(e) => {
                                 if (!validKeyForName.includes(e.key)) {
@@ -101,6 +103,7 @@ export default function FormCard() {
                             }
                             }
                             value={card.cardName}
+                            id='card-name'
                         />
                     </li>
                     <li className='flex flex-col'>

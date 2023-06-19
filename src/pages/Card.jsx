@@ -3,7 +3,7 @@ import { PlusIcon } from '../components/Icons'
 import { Link } from 'react-router-dom'
 import useCard from '../hooks/useCard'
 export default function Card () {
-    let lastMov = ['', '', '']
+    let lastMov = ['', '', '', '', '']
     const {cards} = useCard()
     return (
         <div className='p-8 flex flex-col gap-4'>
@@ -14,7 +14,7 @@ export default function Card () {
                         : <></>
                 }
             </div>
-            <Link to={'/card/form'} className='flex gap-2 items-center justify-center bg-gray-300 rounded-md p-3 text-[#0a937e90] shadow-md'>
+            <Link to={'/card/form'} className='flex gap-2 text-xl items-center justify-center bg-[#0a9373] rounded-md p-3 text-white shadow-md'>
                 Add new Card <PlusIcon />
             </Link>
             <div className='flex flex-col gap-6 mt-8'>
