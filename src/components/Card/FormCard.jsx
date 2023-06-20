@@ -38,7 +38,7 @@ export default function FormCard() {
                 <ul className='flex flex-col gap-4 justify-start items-start text-gray-700 font-medium text-lg'>
                     <li className='w-full'>
                         <label className='text-sm font-semibold' htmlFor='number-card'>Card Number</label>
-                        <div className='flex items-center bg-gray-200 rounded-md justify-between p-2'>
+                        <div className='flex items-center bg-gray-200 rounded-md justify-between p-2 w-full'>
                             <input 
                                 className='bg-gray-200 rounded-md outline-none border-2  border-gray-200 focus:border-b-[#0a937e] focus:rounded-none mr-auto' 
                                 maxLength={19} type='text'
