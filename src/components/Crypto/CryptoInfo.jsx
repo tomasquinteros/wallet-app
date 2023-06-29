@@ -1,10 +1,9 @@
 /* import { useState } from "react" */
 export default function CryptoInfo({ children }) {
-    console.log(children)
     return (
         <div>
             {
-                children ?
+                children &&
                     <details className="bg-gray-300 p-2 text-gray-800 w-full rounded-lg">
                         <summary className="bg-[#0A937E] p-2 -m-[0.5em] text-white">View cryptocurrency information</summary>
                         {
@@ -20,7 +19,6 @@ export default function CryptoInfo({ children }) {
                                 </div>
                         }
                     </details>
-                    :console.log("not found")
             }
         </div>
     )

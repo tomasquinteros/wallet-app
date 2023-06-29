@@ -2,10 +2,10 @@ import ChartTredingCrypto from "../components/ChartTrending/ChartTrendingCrypto"
 import { useFavorites } from "../hooks/useFavorites"
 import { Link } from "react-router-dom"
 import { LinkIcon } from "../components/Icons"
-/* import useFetch from "../hooks/useFetch" */
+
 
 export default function ChartTreding() {
-    /* const { response } = useFetch(`https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`) */
+
     const { favorites } = useFavorites()
     return (
         <>

@@ -3,6 +3,8 @@ import HistoryChart from "../GraphHistoryChart"
 import { ChevronDownIcon, ChevronUpIcon} from "../Icons"
 import Market from "../Crypto/Market";
 import FetchPricesID from "../fetch_dls";
+
+
 export default function ChartTredingCrypto({ crypto }) {
     const [togle, setTogle] = useState(false)
     const market = FetchPricesID(crypto.id)
@@ -23,7 +25,7 @@ export default function ChartTredingCrypto({ crypto }) {
                 <HistoryChart id={crypto.id} />
                 <div className="flex justify-between flex-wrap">
                     {
-                        market ? <Market market={market} /> : <></>
+                        market && <Market market={market} />
                     }
                 </div>
             </div>

@@ -2,16 +2,15 @@ import CardComponent from '../components/Card/CardComponent'
 import { PlusIcon } from '../components/Icons'
 import { Link } from 'react-router-dom'
 import useCard from '../hooks/useCard'
-export default function Card () {
+export default function Card() {
     let lastMov = ['', '', '', '', '']
-    const {cards} = useCard()
+    const { cards } = useCard()
     return (
         <div className='p-8 flex flex-col gap-4'>
             <div className='flex flex-col gap-4'>
                 {
-                    cards.length > 0 ?
-                        cards.map((card, index) => <CardComponent key={index} card={card}/>)
-                        : <></>
+                    cards.length > 0 &&
+                    cards.map((card, index) => <CardComponent key={index} card={card} />)
                 }
             </div>
             <Link to={'/card/form'} className='flex gap-2 text-xl items-center justify-center bg-[#0a9373] rounded-md p-3 text-white shadow-md'>
@@ -22,11 +21,11 @@ export default function Card () {
                 <div className='flex flex-col gap-5'>
 
                     {
-                        lastMov.map((v, index) => 
+                        lastMov.map((v, index) =>
                             <div key={index} className='bg-gray-200/80 h-14 rounded-md'>
                                 {v}
                             </div>
-                        ) 
+                        )
                     }
                 </div>
             </div>

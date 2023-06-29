@@ -48,7 +48,7 @@ export default function Crypto() {
                 </div>
                 <div className="flex justify-between">
                     {
-                        market ? <Market market={market} /> : <></>
+                        market && <Market market={market} />
                     }
                 </div>
                 <div>
@@ -63,6 +63,6 @@ export default function Crypto() {
                     </form>
                 </div>
                 <CryptoInfo>{response}</CryptoInfo>
-            </div> : <div>Loading...</div>
+            </div> : <div><p>Loading...</p></div>
     )
 }

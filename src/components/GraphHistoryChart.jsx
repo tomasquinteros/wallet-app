@@ -6,15 +6,13 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 export default function HistoryChart({id, color}) {
     const { response } = useFetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`)
-    console.log(id)
-    console.log(color)
+
+
     const colorBorder = color ? color : "rgba(10, 147, 126, 0.4)"
-    if (!response) {
-        return <div>Loading...</div>
-    }
-    if (response.length < 1) {
-        return <div>Error not found graph</div>
-    }
+    if (!response) <div>Loading...</div>;
+    if (response.length < 1) <div>Error not found graph</div>
+
+    
     const coinChart = response.prices.map(value => ({ x: value[0], y: value[1].toFixed(2) }))
     const options = {
         plugins: {legend: false},

@@ -27,10 +27,10 @@ export default function Search() {
             </div>
             <ul className="flex flex-col gap-3 list-none">
                 {
-                    response.coins ?
-                        response.coins.map((coin, index) =>
-                            <SearchList crypto={coin} key={index} />
-                        ) : console.log('')
+                    response.coins &&
+                    response.coins.map((coin, index) =>
+                        <SearchList crypto={coin} key={index} />
+                    )
                 }
             </ul>
         </div>
