@@ -6,7 +6,7 @@ export default function Balance () {
             <h1 className="text-5xl text-gray-700">$21.269</h1>
             <span className="flex text-green-500 font-normal"> 
                 <TrackIcon/>
-                $5,7772.92
+                $0
             </span>
         </div>
     )

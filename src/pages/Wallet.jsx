@@ -7,6 +7,7 @@ import useFetch from "../hooks/useFetch"
 export default function Wallet () {
     const { response } = useFetch("https://api.coingecko.com/api/v3/search/trending")
     const { coins }  = response
+
     return (
         <>
             <TopComponent/>
