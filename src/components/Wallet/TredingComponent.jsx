@@ -3,7 +3,6 @@ import { colors } from "../../assets/styleVariables"
 import { Link } from "react-router-dom"
 export function TredingComponent ({coin}) {
     const { name, thumb, id, market_cap_rank } = coin.item
-    console.log(coin.item)
     return (
         <Link to={`/search/${id}`}>
             <article className="w-full rounded-xl grid grid-cols-2">

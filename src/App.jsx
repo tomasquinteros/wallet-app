@@ -9,6 +9,7 @@ import Crypto from './components/Crypto/Crypto'
 import { FavoritesProvider } from './context/favorites'
 import { CardProvider } from './context/cards'
 import FormCard from './components/Card/FormCard'
+import Error404 from './pages/Error404'
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                                 <Route path='/card' element={<Card />} />
                                 <Route path="/search/:id" element={<Crypto />} />
                                 <Route path='/card/form' element={<FormCard/>} />
+                                <Route path='*' element={<Error404/>}/>
                             </Routes>
                         </div>
                         <Nav />

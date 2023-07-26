@@ -2,7 +2,6 @@
 import { TredingComponent } from "./TredingComponent"
 
 export default function TredingCrypto({ coins }) {
-    console.log(coins)
     return (
         <section className="w-4/5 m-auto">
             <h3 className="mb-6 text-lg font-bold text-gray-500">Trending Cryptos</h3>
